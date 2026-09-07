@@ -1,0 +1,15 @@
+-- See https://wiki.hypr.land/Configuring/Basics/Autostart/
+
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd(terminal)
+  -- hl.exec_cmd("")
+  hl.exec_cmd("nm-applet & blueman-applet & swaync")
+  hl.exec_cmd("waybar & waypaper --restore")
+  hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
+  hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
+  hl.exec_cmd("kitty --class kitty-scratchpad")
+  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+  hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+  hl.exec_cmd("wl-paste --watch cliphist store")
+end)

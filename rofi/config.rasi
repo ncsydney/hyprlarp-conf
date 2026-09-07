@@ -1,0 +1,28 @@
+configuration {
+    modi:                       "drun,run,filebrowser,ssh";
+    show-icons:                 true;
+    display-drun:               "";
+    display-ssh:                "";
+    display-run:                "";
+    display-filebrowser:         "";
+    drun-display-format:        "{name}";
+}
+
+@theme "ib"
+
+// color pallete
+* {
+    font:                        "SpaceMono Nerd Font 12";
+    background:                  @surface;
+    background-alt:              @surface-container;
+    foreground:                  @primary;
+    selected:                    @tertiary;
+    active:                      @on-tertiary-container;
+    urgent:                      @error;
+}
+
+// theme image (image height is set via y-padding)
+inputbar {
+    background-image:            url("$HOME/.config/backgrounds/current_wallpaper", width);
+    padding:                     75px 60px;
+}

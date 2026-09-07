@@ -1,0 +1,152 @@
+@import 'colors.css';
+
+* {
+  font-family: "Inter", "SF Pro Text", sans-serif;
+  font-size: 17px;
+}
+
+/* Het hele SwayNC venster */
+.control-center {
+  background: @surface_container;
+  border-color: @surface_container;
+  border-radius: 12px;
+  margin: 10px 10px 10px 0px;
+  padding: 2px 15px;
+  border: 2px solid @primary;
+}
+
+/* De titel widget */
+.widget-title {
+  margin: 8px;
+}
+.widget-title > label {
+  font-size: 1.2rem;
+  color: @primary;
+}
+
+/* De "Clear All" knop */
+.widget-title > button {
+  background:@error;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+/* De complete MPRIS widget */
+.widget-mpris {
+  /* color: @primary; */
+  background: @surface_container;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+/* De album art / afbeelding */
+.widget-mpris-album-art {
+  border-radius: 12px;
+  min-width: 66px;
+  min-height: 66px;
+}
+
+/* Speler knoppen (play/pause, next, prev) */
+.widget-mpris-player > box > button {
+  color: @tertiary;
+}
+
+/* Volume Slider Bereik */
+.widget-volume scale {
+  background: @surface_container;
+}
+/* Volume Slider Gevulde balk */
+.widget-volume scale highlight {
+  background: @primary;
+}
+
+.widget-backlight,
+.widget-volume {
+  color: @primary;
+}
+
+/* Backlight Slider Bereik */
+.widget-backlight scale {
+  background: @surface_container;
+}
+/* Backlight Slider Gevulde balk */
+.widget-backlight scale highlight {
+  background: @primary;
+}
+
+/* Het hele grid-oppervlak */
+
+.widget-buttons-grid {
+    /* De borderkleur (aangepast aan jouw paars/blauwe thema) */
+    border: 2px solid @primary;
+    
+    /* Ronde hoeken die matchen met je notificaties */
+    border-radius: 12px;
+    
+    /* Ruimte tussen de knoppen en de border */
+    padding: 12px;
+    
+    /* Ruimte aan de buitenkant zodat hij niet tegen de sliders plakt */
+    margin: 10px;
+    
+    /* Optioneel: een achtergrondkleur als je die wilt accentueren */
+    background-color: rgba(26, 27, 38, 0.5); 
+  }
+
+/* Alle knoppen in het grid */
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: @surface_container;
+  border-radius: 8px;
+  color: @primary;
+  font-size: 1.5rem; /* Zorgt dat je icoontjes mooi groot zijn */
+}
+
+/* Hover effect voor de knoppen */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: #414868;
+}
+
+/* De actieve/ingeschakelde staat (vooral handig voor je DND-toggle!) */
+.widget-buttons-grid > flowbox > flowboxchild > button:checked {
+  background: @tertiary;
+  color: #1a1b26;
+}
+
+/* De lijst waar alle notificaties in leven */
+.widget-notifications {
+  padding: 4px;
+}
+
+/* Een individuele notificatie-kaart */
+.notification {
+  background: @surface_container;
+  border-radius: 12px;
+  margin: 6px 0;
+  border: 2px solid @primary;
+
+}
+
+/* De titel en tekst binnen een notificatie */
+.notification-content .summary {
+  font-weight: bold;
+  color: #ffffff;
+}
+.notification-content .body {
+  color: #a9b1d6;
+}
+
+/* Haal de achtergrond van de groep (en de hover daarvan) weg */
+.notification-group,
+.notification-group:hover {
+  background: transparent;
+}
+
+/* Zorg dat de header (waar "Hyprshot" staat) ook geen gekke achtergrond krijgt */
+.notification-group-headers {
+  background: transparent;
+}
+
+/* Optioneel: Mocht er een rand om de groep verschijnen bij hover, haal die ook weg */
+.notification-group:hover {
+  box-shadow: none;
+}

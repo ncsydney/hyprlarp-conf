@@ -1,0 +1,9 @@
+[color]
+# Schakel gradient in
+gradient = 1
+
+# Kleur onderaan de balken (Secondary/Accent)
+gradient_color_1 = '{{colors.primary.default.hex}}'
+
+# Kleur bovenaan de balken (Primary)
+gradient_color_2 = '{{colors.active_primary_or_accent_visual_point.default.hex || colors.accent_color.default.hex || colors.primary_fixed_dim.default.hex}}'

@@ -1,0 +1,64 @@
+[config]
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty.toml'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar.css'
+output_path = '~/.config/waybar/colors.css'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland.lua'
+output_path = '~/.config/.config/hypr/configs/colors.lua'
+post_hook = "hyprctl reload"
+
+[templates.hyprlock_conf]
+input_path = '~/.config/matugen/templates/hyprlock.conf'
+output_path = '~/.config/hypr/colors.conf'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.ncspot]
+input_path = '~/.config/matugen/templates/ncspot.toml'
+output_path = '~/.config/ncspot/config.toml'
+
+[templates.nvim]
+input_path = '~/.config/matugen/templates/nvim-colors.vim'
+output_path = '~/.config/nvim/colors/matugen.vim'
+post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.swaync]
+input_path = "~/.config/matugen/templates/swaync.css"
+output_path = "~/.config/swaync/colors.css"
+post_hook = "swaync-client -rs"
+
+
+[templates.gtk3]
+input_path =  '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = '~/.config/matugen/post-hook-scripts/gtk-themes-reload.sh'
+
+[templates.firefox-website-colors]
+input_path = '~/.config/matugen/templates/firefox.css'
+output_path = '~/.config/mozilla/firefox/s6lspu9w.default-release/chrome/userChrome.css'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'

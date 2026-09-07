@@ -1,0 +1,17 @@
+get_volume() {
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'
+}
+
+is_muted() {
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q "[MUTED]"
+}
+
+notify_user() {
+    if is_muted; then
+        notify-send -e -h string:x-canonical-private-synchronous:osd -h int:value:0 -u low "Volume" "Muted"
+    else
+        notify-send -e -h string:x-canonical-private-synchronous:osd -h int:value:$(get_volume) -u low "Volume" "$(get_volume)%"
+    fi
+}
+
+notify_user

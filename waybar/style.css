@@ -1,0 +1,117 @@
+@import 'colors.css';
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+window#waybar .modules-right, 
+window#waybar .modules-left, 
+window#waybar .modules-center {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 16px;                       
+    margin: 4px 25px;                          
+    padding: 2px 15px;
+}
+
+#power-profiles-daemon,
+#custom-notification,
+#custom-clipboard,
+#idle_inhibitor,
+#wireplumber,
+#workspaces,
+#backlight,
+#battery,
+#network,
+#window,
+#clock,
+#tray {
+    padding: 0 8px;
+    margin: 2px -1px;
+}
+
+#clock {
+    color: @tertiary;
+}
+
+#workspaces button {
+    color: @primary;
+    background: transparent;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-radius: 12px;
+}
+
+#workspaces button.active {
+    color: @inverse_primary;           
+    font-weight: bold;
+    /* Matugen genereert geen lineaire gradients, dus we mixen primary en tertiary voor een vergelijkbaar effect */
+    background: linear-gradient(45deg, @primary, @tertiary);
+    border-radius: 12px;      
+    padding: 0 5px;
+}
+
+#workspaces button:hover {
+    color: @tertiary;
+    background: @surface_variant; 
+}
+
+#power-profiles-daemon {
+    border-radius: 12px;      
+    padding: 0 5px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: @error; 
+    color: @on_error;
+}
+
+#power-profiles-daemon.balanced,
+#power-profiles-daemon.power-saver {
+    border-radius: 12px;
+    padding: 0 5px;
+}
+
+#battery.critical {
+    color: @error; 
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-radius: 8px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @error;
+        color: @on_error;
+    }
+}
+
+#power-profiles-daemon:hover,
+#custom-notification:hover,
+#custom-clipboard:hover,
+#idle_inhibitor:hover,
+#wireplumber:hover,
+#workspaces:hover,
+#backlight:hover,
+#battery:hover,
+#network:hover,
+#window:hover,
+#clock:hover,
+#tray:hover {
+    color: @tertiary;
+    transition: all 0.3s ease;
+}
+
+/* #custom-bluetooth {
+    color: @tertiary; 
+} */

@@ -1,0 +1,157 @@
+{
+    "layer": "top",
+    "output": [
+        "*"
+    ],
+    "height": 10,
+    "exclusive": true,
+    "passthrough": false,
+    "reload_style_on_change": true,
+    "include": [
+        "$XDG_CONFIG_HOME/waybar/modules/*json*", 
+        "$XDG_CONFIG_HOME/waybar/includes/includes.json" 
+    ],
+    "modules-left": [
+        "group/pill#left1",
+        "group/pill#left2"
+	],
+    "group/pill#left1": {
+        "orientation": "inherit",
+        "modules": [
+          "hyprland/workspaces"
+        ]
+    },
+    "group/pill#left2": {
+        "orientation": "inherit",
+        "modules": [
+            "idle_inhibitor"
+        ]
+    },
+    "modules-center": [
+        "group/pill#center"
+    ],
+    "group/pill#center": {
+        "modules": [
+            "clock"
+            // "hyprland/window"
+        ],
+        "orientation": "inherit"
+    },
+    "modules-right": [
+        "group/pill#right1",
+        "group/pill#right2",
+        "group/pill#right3"
+    ],
+    "group/pill#right1": {
+        "modules": [
+            "custom/clipboard",
+            // "backlight",
+            "network"
+            // "wireplumber"
+        ],
+        "orientation": "inherit"
+    },
+    "group/pill#right2": {
+        "modules": [
+            "tray",
+            "battery",
+            // "clock",
+            "custom/notification"
+        ],
+        "orientation": "inherit"
+    },
+
+    "custom/clipboard": {
+    "format": "",
+    "on-click": "cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy",
+    "tooltip": false,
+    "escape": true
+    },
+
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8 // Dit zorgt voor ademruimte tussen de icoontjes, passend bij je CSS padding
+
+    },
+
+    "wireplumber": {
+    "format": "{icon}",
+    "format-bluetooth": "󰂯 {icon}",
+    "format-bluetooth-muted": "󰂯 󰝟",
+    "format-muted": "󰪲",
+    "format-icons": ["󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip-format": "{volume}%"
+  },
+
+    "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip-format": "{percent}%"
+
+  },
+
+    "network": {
+    "format-wifi": "{icon}", 
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰤭",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format-wifi": "{essid}\nSignaalsterkte: {signalStrength}% ({signaldBm}dBm)\nIP: {ipaddr}/{cidr}",
+    "on-click": "rofi-wifi-menu"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-icons": {
+        "charging": [" ", " ", " ", " ", " "],
+        "default": ["", "", "", "", ""]
+}
+  },
+    "clock": {
+    "format": "󰥔 {:%H:%M}",
+    "format-alt": "󰃭 {:%d/%m/%Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+
+    "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+      }
+  },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱏧",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󱅫",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󱏧",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }
+}        

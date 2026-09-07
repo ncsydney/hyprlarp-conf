@@ -1,0 +1,15 @@
+# # Fish kleurenschema gegenereerd door Matugen
+# set -g fish_color_normal {{colors.on_surface.hex}}
+# set -g fish_color_command {{colors.primary.hex}}
+# set -g fish_color_keyword {{colors.tertiary.hex}}
+# set -g fish_color_quote {{colors.green.hex}}
+# set -g fish_color_redirection {{colors.secondary.hex}}
+# set -g fish_color_end {{colors.primary_container.hex}}
+# set -g fish_color_error {{colors.error.hex}}
+# set -g fish_color_param {{colors.on_surface_variant.hex}}
+# set -g fish_color_comment {{colors.outline.hex}}
+# set -g fish_color_selection --background={{colors.secondary_container.hex}}
+# set -g fish_color_search_match --background={{colors.secondary_container.hex}}
+# set -g fish_color_operator {{colors.primary.hex}}
+# set -g fish_color_escape {{colors.inverse_primary.hex}}
+# set -g fish_color_autosuggestion {{colors.outline.hex}}
